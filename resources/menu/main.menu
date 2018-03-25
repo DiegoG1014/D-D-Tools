@@ -1,0 +1,152 @@
+local f = {
+  
+  map = function()
+    
+    game.modules.maphandler.maplist()
+    
+  end,
+  
+  char = function()
+    
+    game.modules.entities.charlist()
+    
+  end,
+  
+  item = function()
+    
+    game.state.menus.main[3] = false
+    game.state.menus.lootgen[3] = true
+    
+  end,
+  
+  settings = function()
+    
+    game.state.menus.main[3] = false
+    game.state.menus.settings[3] = true
+    
+  end,
+  
+  music = function()
+    
+    
+    
+  end
+}
+
+return {
+  
+  widgets = {
+    
+    { --Map
+      
+      type      = "button",
+      pos       = {-210,0},
+      fixLayout = true,
+      text      = {lang.game.map,"center","center",{0,0}},
+      action    = f.map,
+      --texture   = {"icons/button/rectangle",color = {hover = {255,255,255,100}, normal = {255,255,255,255}, click = {255,255,255,0}}},
+      border    = {3,color = game.colors.border},
+      color     = game.colors.button,
+      font      = {game.colors.font.fontname, 12, align = "center", color = game.colors.font},
+      state     = "normal"
+      
+    },
+    
+    { --Character
+      
+      type      = "button",
+      pos       = {0,0},
+      fixLayout = true,
+      text      = {lang.game.char,"center","center",{0,0}},
+      action    = f.char,
+      border    = {3,color = game.colors.border},
+      color     = game.colors.button,
+      font      = {game.colors.font.fontname, 12, align = "center", color = game.colors.font},
+      state     = "normal"
+      
+    },
+    
+    { --Item generator
+      
+      type      = "button",
+      pos       = {210,0},
+      fixLayout = true,
+      text      = {lang.game.loot,"center","center",{0,0}},
+      action    = f.item,
+      border    = {3,color = game.colors.border},
+      color     = game.colors.button,
+      font      = {game.colors.font.fontname, 12, align = "center", color = game.colors.font},
+      state     = "normal"
+      
+    },
+    
+    { --Options
+      
+      type      = "button",
+      pos       = {210+210,0},
+      fixLayout = true,
+      size      = {50,50},
+      text      = {"","center","center",{0,0}},
+      icon      = {"icons/settings",5,5,40,40},
+      action    = f.settings,
+      border    = {3,color = game.colors.border},
+      color     = game.colors.button,
+      font      = {game.colors.font.fontname, 12, align = "center", color = game.colors.font},
+      state     = "normal"
+      
+    },
+    
+    { --Moosik
+      
+      type      = "button",
+      pos       = {-210-60,0},
+      fixLayout = true,
+      size      = {50,50},
+      text      = {"","center","center",{0,0}},
+      icon      = {"icons/music",5,5,40,40},
+      action    = f.music,
+      border    = {3,color = game.colors.border},
+      color     = game.colors.button,
+      font      = {game.colors.font.fontname, 12, align = "center", color = game.colors.font},
+      state     = "normal"
+      
+    },
+    
+    { --Center camera
+      
+      type      = "button",
+      pos       = {16,(112*2)+15},
+      fixLayout = false,
+      size      = {50,50},
+      text      = {lang.game.centercam,"center","bottom",{0,16}},
+      icon      = {"icons/camera",0,0,50,50},
+      action    = function() camera.set(win.w/2,win.h/2,0,0) end,
+      border    = {2, color = game.colors.border},
+      color     = game.colors.button,
+      font      = {game.colors.font.fontname, 8, align = "center", color = game.colors.font},
+      state     = "normal"
+      
+    }
+    
+  },
+  
+  layout = {
+    
+    grid = { (win.w/2)-(220/2),10 },
+    size = {
+      
+      button = { 200,50 }
+      
+    }
+    
+  },
+  
+  background = {
+    
+    {3,10,20,200},
+    {0,0},
+    {"full",70}
+    
+  }
+  
+}

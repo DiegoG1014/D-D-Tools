@@ -1,0 +1,11 @@
+local ent = {
+  
+  name   = "Lenin",
+  race   = "Peneman",
+  class  = "Domador de penes",
+  sprite = "sprites/pene",
+  type   = 3
+  
+}
+
+return ent

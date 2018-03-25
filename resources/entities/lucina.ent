@@ -1,0 +1,30 @@
+local ent = {
+  
+  name   = "Lucina",
+  race   = lang.ent.human,
+  class  = lang.ent.lord,
+  sprite = "sprites/lucina",
+  type   = 2,
+  anim   = {
+    
+    name = "sprites/lucina",
+    data = {
+      framerate  = .15,
+      texture = {
+        
+        {dim = {32,32},pos = {0,0} ,rot = 0},
+        {dim = {32,32},pos = {32,0},rot = 0},
+        {dim = {32,32},pos = {64,0},rot = 0},
+        {dim = {32,32},pos = {64+32,0},rot = 0},
+        {dim = {32,32},pos = {64+64,0},rot = 0},
+        {dim = {32,32},pos = {64+64+32,0},rot = 0},
+        
+      }
+    }
+    
+    
+  }
+  
+}
+
+return ent

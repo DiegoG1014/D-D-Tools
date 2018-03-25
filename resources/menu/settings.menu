@@ -1,0 +1,94 @@
+local f = {
+  
+  back = function()
+    
+    game.state.menus.main[3] = true
+    game.state.menus.settings[3] = false
+    game.state.menus.settings[1].widgets[3].baseval = conf.game.gridopacity or 0
+    
+  end
+  
+  
+}
+
+f.save = function()
+  
+  config.change("game","gridopacity",game.state.menus.settings[1].widgets[3].baseval)
+  f.back()
+  
+end
+
+
+return {
+  
+  widgets = {
+    
+    { --Back
+      
+      type      = "button",
+      pos       = {-110/2,win.h-70},
+      fixLayout = true,
+      text      = {lang.back,"center","center",{0,0}},
+      action    = f.back,
+      border    = {3,color = game.colors.border},
+      color     = game.colors.button,
+      font      = {game.colors.font.fontname, 12, align = "center", color = game.colors.font},
+      state     = "normal"
+      
+    },
+    
+    { --Save settings
+      
+      type      = "button",
+      pos       = {110,win.h-70},
+      fixLayout = true,
+      text      = {lang.save,"center","center",{0,0}},
+      action    = f.save,
+      border    = {3,color = game.colors.border},
+      color     = game.colors.button,
+      font      = {game.colors.font.fontname, 12, align = "center", color = game.colors.font},
+      state     = "normal"
+      
+      
+    },
+    
+    { --Opacity slider
+      
+      type      = "slider",
+      pos       = {-20,40},
+      fixLayout = true,
+      text      = {lang.game.opacityslider,"center","top",{0,0}},
+      border    = {3,color = game.colors.border},
+      color     = game.colors.slider,
+      font      = {game.colors.font.fontname, 12, align = "center", color = game.colors.font},
+      state     = "normal",
+      values    = {0,255,true},
+      baseval   = conf.game.gridopacity or 0,
+      bar       = {5,20, color = game.colors.sliderbar},
+      vertical  = false
+      
+    }
+    
+  },
+  
+  layout = {
+    
+    grid = { (win.w/2)-(220/2),10 },
+    size = {
+      
+      slider = { 250,10 },
+      button = { 100,50 }
+      
+    }
+    
+  },
+  
+  background = {
+    
+    {3,10,20,200},
+    {0,0},
+    {"full","full"}
+    
+  }
+  
+}

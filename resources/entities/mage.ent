@@ -1,0 +1,11 @@
+local ent = {
+  
+  name   = "Mago",
+  race   = "Humano",
+  class  = "Mago",
+  sprite = "sprites/mage",
+  type   = 3
+  
+}
+
+return ent

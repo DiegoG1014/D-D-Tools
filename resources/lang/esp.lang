@@ -1,0 +1,92 @@
+lang = {
+  
+  back    = "Regresar",
+  save    = "Guardar",
+  success = "Completado",
+  
+  credits = {
+    
+    dg      = "Programación y Co-Producción",
+    lb      = "Arte e ilustraciones",
+    tpm     = "Módulos de terceros",
+    engine  = "Hecho en un motor hecho en LVE2D",
+    TEsound = "(Modificado) TEsound para manejamiento de sonido",
+    
+  },
+  
+  ent = {
+    
+    human = "Humano",
+    lord  = "Señor",
+    tact  = "Estratega"
+    
+  },
+  
+  game = {
+    
+    loot          = "Generador de Tesoros",
+    char          = "Géstor de Personajes",
+    map           = "Tablero",
+    opacityslider = "Opacidad del cuadriculado",
+    deselect      = "Deseleccionar",
+    players       = "Jugadores",
+    monsters      = "Enemigos",
+    other         = "Otros",
+    centercam     = "Centrar Camara",
+    lootlevel     = "Nivel del generador"
+    genweapon     = "Generar un arma",
+    genarmor      = "Generar una armadura"
+    
+    
+  },
+  
+  cmds = {
+    
+    help    = "Returns a list of all available commands, or more info on the specified command. (command)",
+    clear   = "Clears the console output.",
+    fotc    = "Toggles to forward output to console", 
+    force   = "Forces the specified cycle (func). mm = Memory Manager, clearlog = log clearing, savelog = outputting log data to file.",
+    sys     = "Accesses LÖVE's running functions (func). quit, restart.",
+    load    = "Interfaces the asset handler (asset type, asset data).",
+    get     = "Returns a list of what is currently in the desired queue (type,queue)",
+    lua     = "Executes a chunk of code as a function and stores its returned value in console.avns (code string)",
+    draw    = "Places the desired drawable on queue to be drawn on-screen (drawable, {x,y,z} [,r,{sw,sh}, priority, updateID]). Add an update ID to keep it drawn.",
+    atl     = "Adds the desired value to the specified queue (list, id, func). Available queues: update, textinput, keypressed, mousemoved.",
+    debug   = "Toggles whether to print debug data on-screen. Optional \"dump\" argument can be added to dump debug data to logger, or \"sublog\" to toggle whether to print repetitive data on the output (disabled upon deployment).",
+    move    = "Moves the specified object (what). camera = Moves camera. (x,y,rotation,zoom)",
+    conf    = "Changes the specified confuration value (category, value)",
+    profile = "Interfaces the profile library, this is an advanced debug facility and is disabled upon deployment (func,...).",
+    mode    = "Toggles the display of the console",
+    
+    disabled = "This function is disabled",
+    forceava = "force::available = mm, clearlog, savelog",
+    luachunk = "Chunk Executed",
+    sysava   = "sys::available = quit, restart",
+    adddrawl = "Object queued for drawing",
+    conbig   = "Console is now big",
+    consmall = "Console is now small",
+    camwarn  = "Must input all four values: x,y,rotation,zoom",
+    cammove  = "Moved Camera",
+    
+    debug = {
+      
+      mouse    = "Mouse - x: %d; y: %d",
+      camr     = "Camera Real - x: %d; y: %d; zoom: %g; r: %g",
+      camg     = "Camera Goal - x: %d; y: %d; zoom: %g; r: %g",
+      drawc    = "Drawcalls: %s; Canvas Switches: %d",
+      txmem    = "Texture Memory: %dKB; Loaded images: %d",
+      canfon   = "Loaded canvases: %s; Loaded fonts: %d",
+      shade    = "Shader Switches: %s",
+      
+      dump     = "Dumped stats to record",
+      sublog   = "Toggled sub-logging to %t",
+      
+      active   = "Debug mode enabled",
+      deactive = "Debug mode disabled"
+      
+    }
+    
+    
+  }
+  
+}

@@ -1,0 +1,134 @@
+local armorgen  = require 'game.gen.armorshield'
+local weapongen = require 'game.gen.weapon'
+local level     = 1
+local generated = {""}
+
+local f = {
+  
+  back = function()
+    
+    game.state.menus.main[3] = true
+    game.state.menus.lootgen[3] = false
+    
+  end,
+  
+  genarmor = function()
+    
+    generated = armorgen.generate(level)
+    
+  end,
+  
+  genweapon = function()
+    
+    generated = weapongen.generate(level)
+    
+  end,
+  
+}
+
+return {
+  
+  widgets = {
+    
+    { --Back
+      
+      type      = "button",
+      pos       = {-110/2,win.h-70},
+      fixLayout = true,
+      text      = {lang.back,"center","center",{0,0}},
+      action    = f.back,
+      border    = {3,color = game.colors.border},
+      color     = game.colors.button,
+      font      = {game.colors.font.fontname, 12, align = "center", color = game.colors.font},
+      state     = "normal"
+      
+    },
+    
+    { --Level slider
+      
+      type      = "slider",
+      pos       = {-20-125,40},
+      fixLayout = true,
+      text      = {lang.game.lootlevel,"center","top",{0,0}},
+      border    = {3,color = game.colors.border},
+      color     = game.colors.slider,
+      font      = {game.colors.font.fontname, 12, align = "center", color = game.colors.font},
+      state     = "normal",
+      values    = {0,3,false},
+      baseval   = level,
+      bar       = {5,20, color = game.colors.sliderbar},
+      vertical  = false
+      
+    },
+    
+    { --Generate Armor
+      
+      type      = "button",
+      pos       = {150-50,100},
+      fixLayout = true,
+      text      = {lang.game.genarmor,"center","center",{0,0}},
+      action    = f.genarmor,
+      border    = {3,color = game.colors.border},
+      color     = game.colors.button,
+      font      = {game.colors.font.fontname, 12, align = "center", color = game.colors.font},
+      state     = "normal"
+      
+    },
+    
+    { --Generate Weapons
+      
+      type      = "button",
+      pos       = {-150-50,100},
+      fixLayout = true,
+      text      = {lang.game.genweapon,"center","center",{0,0}},
+      action    = f.genweapon,
+      border    = {3,color = game.colors.border},
+      color     = game.colors.button,
+      font      = {game.colors.font.fontname, 12, align = "center", color = game.colors.font},
+      state     = "normal"
+      
+    },
+    
+    { --Weapon name
+      
+      type      = "panel",
+      pos       = {-400/2,250},
+      fixLayout = true,
+      text      = {table.write(generated,true),"center","center",{0,0}},
+      border    = {3,color = {0,0,0,0}},
+      color     = {0,0,0,0},
+      font      = {game.colors.font.fontname, 12, align = "center", color = {255-15,255-15,255,255}},
+      state     = "normal"
+      
+    }
+    
+  },
+  
+  layout = {
+    
+    grid = { (win.w/2),10 },
+    size = {
+      
+      slider = { 250,10 },
+      button = { 100,50 },
+      panel  = { 400,300 }
+      
+    }
+    
+  },
+  
+  background = {
+    
+    {3,10,20,200},
+    {0,0},
+    {"full","full"}
+    
+  },
+  
+  otheraction = function()
+    
+    
+    
+  end
+  
+}

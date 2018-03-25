@@ -1,0 +1,30 @@
+local ent = {
+  
+  name   = "Robin",
+  race   = lang.ent.human,
+  class  = lang.ent.tact,
+  sprite = "sprites/robin",
+  type   = 2,
+  anim   = {
+    
+    name = "sprites/robin",
+    data = {
+      framerate  = .15,
+      texture = {
+        
+        {dim = {32,32},pos = {0,0} ,rot = 0},
+        {dim = {32,32},pos = {32,0},rot = 0},
+        {dim = {32,32},pos = {64,0},rot = 0},
+        {dim = {32,32},pos = {64+32,0},rot = 0},
+        {dim = {32,32},pos = {64+64,0},rot = 0},
+        {dim = {32,32},pos = {64+64+32,0},rot = 0},
+        
+      }
+    }
+    
+    
+  }
+  
+}
+
+return ent

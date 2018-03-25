@@ -1,0 +1,32 @@
+local ent = {
+  
+  name   = "Morgan",
+  race   = lang.ent.human,
+  class  = lang.ent.tact,
+  type   = 2,
+  sprite = "sprites/morgan",
+  type   = 2,
+  
+  anim   = {
+    
+    name = "sprites/morgan",
+    data = {
+      framerate  = .15,
+      texture = {
+        
+        {dim = {32,32},pos = {0,0} ,rot = 0},
+        {dim = {32,32},pos = {32,0},rot = 0},
+        {dim = {32,32},pos = {64,0},rot = 0},
+        {dim = {32,32},pos = {64+32,0},rot = 0},
+        {dim = {32,32},pos = {64+64,0},rot = 0},
+        {dim = {32,32},pos = {64+64+32,0},rot = 0},
+        
+      }
+    }
+    
+    
+  }
+  
+}
+
+return ent

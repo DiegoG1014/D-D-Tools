@@ -1,0 +1,29 @@
+local ent = {
+  
+  name   = "Star Butterfly",
+  race   = "Mewmana",
+  class  = "Princesa de Mewni",
+  sprite = "sprites/star",
+  type   = 1,
+  anim   = {
+    
+    name = "sprites/star",
+    data = {
+      framerate  = .2,
+      texture = {
+        
+        {dim = {32,32},pos = {0,0} ,rot = 0},
+        {dim = {32,32},pos = {32,0},rot = 0},
+        {dim = {32,32},pos = {64,0},rot = 0},
+        {dim = {32,32},pos = {64+32,0},rot = 0},
+        
+      }
+    }
+    
+    
+  },
+  
+  
+}
+
+return ent

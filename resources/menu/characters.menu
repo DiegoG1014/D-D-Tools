@@ -1,0 +1,108 @@
+local f = {
+
+  back = function()
+    
+    game.state.menus.main[3] = true
+    game.state.menus.characters[3] = false
+    game.state.menus.__characters[3] = false
+    
+  end
+  
+}
+
+local menu = {
+  
+  widgets = {
+    
+    { --Back
+      
+      type      = "button",
+      pos       = {-110/2,win.h-70},
+      fixLayout = true,
+      text      = {lang.back,"center","center",{0,0}},
+      action    = f.back,
+      border    = {3,color = game.colors.border},
+      color     = game.colors.button,
+      font      = {game.colors.font.fontname, 12, align = "center", color = game.colors.font},
+      state     = "normal"
+      
+    },
+    
+    { --Deselect
+      
+      type      = "button",
+      pos       = {16,(112*4)+15},
+      size      = {64,64},
+      fixLayout = false,
+      text      = {lang.game.deselect,"center","bottom",{0,16}},
+      action    = function() game.state.selected = nil end,
+      border    = {3,color = game.colors.border},
+      color     = game.colors.button,
+      font      = {"copperplate gothic bold", 12, align = "center", color = game.colors.char.names},
+      state     = "normal"
+      
+    },
+    
+    { --Up arrow
+      
+      type      = "button",
+      pos       = {win.w-(75*3)-16,win.h-64},
+      size      = {16,16},
+      fixLayout = false,
+      text      = {"","right","bottom",{0,0}},
+      icon      = {"icons/arrow",0,0,16,16},
+      action    = function()
+        if game.state.chscroll < 0 then
+          game.state.chscroll = game.state.chscroll + 10
+        end
+      end,
+      border    = {1,color = game.colors.border},
+      color     = game.colors.button,
+      font      = {"lucon", 12, align = "center", color = game.colors.font},
+      state     = "normal"
+      
+    },
+    
+    { --Down arrow
+      
+      type      = "button",
+      pos       = {win.w-(75*3)-16,win.h-32},
+      size      = {16,16},
+      fixLayout = false,
+      text      = {"","right","bottom",{0,0}},
+      icon      = {"icons/arrow",16,16,-16,-16},
+      action    = function()
+        game.state.chscroll = game.state.chscroll - 10
+      end,
+      border    = {1,color = game.colors.border},
+      color     = game.colors.button,
+      font      = {"lucon", 12, align = "center", color = game.colors.font},
+      state     = "normal"
+      
+    }
+    
+  },
+  
+  layout = {
+    
+    grid = { (win.w/2)-(220/2),10 },
+    size = {
+      
+      button = { 200,50 },
+      panel  = { win.w/2,70 }
+      
+    }
+    
+  },
+  
+  background = {
+    
+    {3,10,20,220},
+    {win.w-(75*3.5),0},
+    {win.w/3,"full"}
+    
+  }
+  
+}
+
+return menu

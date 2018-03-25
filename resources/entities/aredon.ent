@@ -1,0 +1,28 @@
+local ent = {
+  
+  name   = "Aredon",
+  race   = "Medio Dragón de Plata, Elfo",
+  class  = "Hechizero",
+  sprite = "sprites/aredon",
+  type   = 1,
+  anim   = {
+    
+    name = "sprites/aredon",
+    data = {
+      framerate  = .2,
+      texture = {
+        
+        {dim = {32,32},pos = {0,0} ,rot = 0},
+        {dim = {32,32},pos = {32,0},rot = 0},
+        {dim = {32,32},pos = {64,0},rot = 0},
+        {dim = {32,32},pos = {64+32,0},rot = 0},
+        
+      }
+    }
+    
+    
+  }
+  
+}
+
+return ent
